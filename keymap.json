@@ -1,0 +1,133 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      //  panes
+      // "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      // "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      // "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "alt-h": "vim::Left",
+      "alt-l": "vim::Right",
+      "alt-j": "vim::Down",
+      "alt-k": "vim::Up"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "k j": "vim::SwitchToNormalMode"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && menu",
+    "bindings": {
+      "k j": ["workspace::SendKeystrokes", "escape l"]
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-t": "terminal_panel::ToggleFocus",
+      "alt-w": "workspace::Save",
+      "alt-x": "pane::CloseActiveItem",
+      //  tabs
+      "alt-h": "pane::ActivatePreviousItem",
+      "alt-l": "pane::ActivateNextItem",
+      // tooltip hover
+      "ctrl-shift-e": "editor::Hover",
+      // move lines
+      "ctrl-j": "editor::MoveLineDown",
+      "ctrl-k": "editor::MoveLineUp",
+      "tab": "editor::Indent",
+      "shift-tab": "editor::Outdent"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && vim_operator == none && !VimWaiting",
+    "bindings": {
+      // move lines
+      "ctrl-j": "editor::MoveLineDown",
+      "ctrl-k": "editor::MoveLineUp",
+      "tab": "editor::Indent",
+      "shift-tab": "editor::Outdent"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "escape": "workspace::ToggleLeftDock",
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-t": "terminal_panel::ToggleFocus",
+      "n": "project_panel::NewFile",
+      "shift-n": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": ["project_panel::Trash", { "skip_prompt": false }],
+      "shift-d": ["project_panel::Delete", { "skip_prompt": false }]
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "alt-k": "editor::ContextMenuPrevious",
+      "alt-j": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "escape": "workspace::ToggleBottomDock",
+      "alt-t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "FileFinder",
+    "bindings": {
+      "alt-k": "menu::SelectPrevious",
+      "alt-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "Picker",
+    "bindings": {
+      "alt-k": "menu::SelectPrevious",
+      "alt-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      //  panes
+      "alt-h": "pane::ActivatePreviousItem",
+      "alt-l": "pane::ActivateNextItem",
+      "alt-n": "workspace::NewTerminal",
+      "alt-x": "pane::CloseActiveItem"
+    }
+  }
+]
